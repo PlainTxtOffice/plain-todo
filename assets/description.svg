@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" role="img" aria-labelledby="title desc">
+  <title id="title">Parts of a todo.txt task line</title>
+  <desc id="desc">A completed task line with its completion mark, priority, completion date, creation date, description, project tag, context tag, and key:value tag labeled.</desc>
+  <style>
+    .line { font-family: Consolas, Menlo, "DejaVu Sans Mono", monospace; font-size: 15px; fill: #111111; }
+    .label { font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 12px; fill: #111111; text-anchor: middle; }
+    .mark { fill: none; stroke: #444444; stroke-width: 1.2; }
+  </style>
+  <rect width="720" height="200" fill="#ffffff"/>
+  <text class="line" x="45" y="105" textLength="630" lengthAdjust="spacingAndGlyphs" xml:space="preserve">x (A) 2026-11-12 2026-11-01 Call dentist +Health @phone due:2026-11-20</text>
+
+  <!-- Brackets above the line -->
+  <path class="mark" d="M45 88v-6h9v6 M49.5 82v-28"/>
+  <path class="mark" d="M99 88v-6h90v6 M144 82v-28"/>
+  <path class="mark" d="M297 88v-6h108v6 M351 82v-28"/>
+  <path class="mark" d="M486 88v-6h54v6 M513 82v-28"/>
+  <text class="label" x="49.5" y="46">Completed</text>
+  <text class="label" x="144" y="46">Completion date</text>
+  <text class="label" x="351" y="46">Description</text>
+  <text class="label" x="513" y="46">Context tag</text>
+
+  <!-- Brackets below the line -->
+  <path class="mark" d="M63 112v6h27v-6 M76.5 118v28"/>
+  <path class="mark" d="M198 112v6h90v-6 M243 118v28"/>
+  <path class="mark" d="M414 112v6h63v-6 M445.5 118v28"/>
+  <path class="mark" d="M549 112v6h126v-6 M612 118v28"/>
+  <text class="label" x="76.5" y="162">Priority</text>
+  <text class="label" x="243" y="162">Creation date</text>
+  <text class="label" x="445.5" y="162">Project tag</text>
+  <text class="label" x="612" y="162">key:value tag</text>
+</svg>
