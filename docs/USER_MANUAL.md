@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-11-11
+last_updated: 2026-11-13
 version: 5.2.0
 product_versions:
   windows: "1.0.0"
@@ -238,7 +238,7 @@ Task actions save as they occur; the edit sheet uses **Save** and **Cancel**.
 | Add tasks | Type into the box at the bottom and tap the plus button. | **+ Add Task** or **Edit > Add Task...** opens a separate dialog. | Type into the bottom input and tap the plus button. |
 | Organization | **Sort** and **Group** buttons above the list. | **View > Sort By** and **View > Group By**. | **Sort** and **Group** menus above the list. |
 | File location | The line under the add box shows the file name and task counts; **Settings** shows the full location. | The editor shows **File Path**; the window title identifies Dropbox mode. | The footer shows the file name and task counts; **Settings** shows the full path and location. |
-| Help | **Settings > User Guide** explains task syntax; **Privacy** opens the privacy policy; **Send feedback** starts an email to the developer. | **Help > About** identifies the app. | **Settings > User Guide** explains task syntax; **Privacy** opens the privacy policy. |
+| Help | **Settings > User Guide** explains task syntax; **Privacy** opens the privacy policy; **Send feedback** starts an email to the developer; **Open contact form** opens the website contact form. | **Help > About** identifies the app. | **Settings > User Guide** explains task syntax; **Privacy** opens the privacy policy. |
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/TodoAppScreen.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/components/TaskRow.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/SettingsDialog.kt; platform/windows/plain_todo/ui/gui/views/menu_bar/main_menu.py; platform/windows/plain_todo/ui/gui/views/menu_bar/view_menu.py; platform/windows/plain_todo/ui/gui/views/root_window/panes/task_editor.py; platform/ios/plain_todo/ContentView.swift; platform/ios/plain_todo/Views/Sheets.swift -->
 
 On Android, open the gear button at the top right for **Settings**. Each row
@@ -492,10 +492,14 @@ Bug reports and feature requests are welcome.
    Android version, and the device model.
 1. Describe what happened or what you would like, review the draft, and send
    it. Nothing is sent until you send the email.
+1. To use the website instead, tap **Open contact form**. Your browser opens
+   the contact form at
+   [plaintxtoffice.com/contact](https://plaintxtoffice.com/contact/).
 
-If no email app is installed, write to that address directly. On any platform
-you can also use the contact form at
-[plaintxtoffice.com/contact](https://plaintxtoffice.com/contact/).
+If no email app is installed, write to that address directly or use the
+contact form. If no browser is installed, the app says so; use the email draft
+or write to that address. On any platform you can also open the contact form
+in a browser yourself.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/Feedback.kt; platform/android/app/src/main/res/values/strings.xml; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/PrivacyPolicyDialog.kt -->
 
 ### Recurring tasks on Windows (premium, in development)
@@ -684,11 +688,19 @@ platform has a command-line task interface.
 | **Dropbox API** | The task and archive paths you entered in **Dropbox Connection…**. |
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/TodoFileStore.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/TodoStorage.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/SettingsDialog.kt -->
 
-Uninstalling the app removes the files in **App Storage** along with its
-settings and any saved Dropbox connection. Files you imported and files in
-Dropbox are not removed. Use **Export TODO.txt Copy** first if your list is in
-**App Storage** and you want to keep it.
+Uninstalling the app removes the files in **App Storage** from the device,
+along with its settings and any saved Dropbox connection. Files you imported
+and files in Dropbox are not removed. Use **Export TODO.txt Copy** first if
+your list is in **App Storage** and you want to keep it.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/PrivacyPolicyDialog.kt -->
+
+The app allows Android's backup and device-to-device transfer to copy the
+**App Storage** files and the app's settings. Android, not the app, decides
+whether and when a backup is made. Where one exists, Android can keep it after
+you uninstall and restore it when you reinstall the app or set up another
+device. The saved Dropbox connection is kept outside the data offered for
+backup and transfer, so connect to Dropbox again after a restore.
+<!-- Verified from: platform/android/app/src/main/AndroidManifest.xml [allowBackup, dataExtractionRules, fullBackupContent]; platform/android/app/src/main/res/xml/backup_rules.xml; platform/android/app/src/main/res/xml/data_extraction_rules.xml; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/TodoFileStore.kt [filesDir, getSharedPreferences]; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/data/TodoPreferences.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/dropbox/DropboxCredentials.kt [encryptedFile] -->
 
 When the Android app saves, it changes only the lines of the tasks you
 changed. Lines it does not recognize as tasks, and the file's existing line
@@ -796,7 +808,8 @@ Renaming a task outside the app can leave an old note without its task.
 | Android asks for two different Dropbox file paths starting with `/` | Enter separate task and archive paths, each beginning with `/`. |
 | Android cannot contact Dropbox | Check the internet connection and try again. A direct connection does not work offline. |
 | Android cannot read or save the Dropbox connection | Unlock the device and try again. |
-| Android says no email app is available for feedback | Write to `support@plaintxtoffice.com` from any email account. |
+| Android says no email app is available for feedback | Tap **Open contact form** in **Settings**, or write to `support@plaintxtoffice.com` from any email account. |
+| Android says no browser is available for the contact form | Tap **Send feedback** to use email, or write to `support@plaintxtoffice.com` from any email account. |
 | A Dropbox file changed since loading | Reload, review the current list, and repeat only the edits still needed. |
 | A Dropbox write has an uncertain result | Reload before retrying; check whether the intended change is already present. |
 | Archiving reports a partial or uncertain result | Review both task and archive files before restarting and retrying to avoid duplicate archive entries. |
@@ -832,9 +845,11 @@ you choose a direct Dropbox connection.
 
 ### Will I lose my tasks if I uninstall the Android app?
 
-Tasks kept in **App Storage** are removed with the app. Export a copy first.
-A file you imported and files in Dropbox are not removed.
-<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/PrivacyPolicyDialog.kt -->
+Tasks kept in **App Storage** are removed from the device with the app. Export
+a copy first. An Android backup, if one was made, may also hold them and
+restore them when you reinstall, but do not rely on it. A file you imported
+and files in Dropbox are not removed.
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/PrivacyPolicyDialog.kt; platform/android/app/src/main/AndroidManifest.xml [allowBackup]; platform/android/app/src/main/res/xml/backup_rules.xml; platform/android/app/src/main/res/xml/data_extraction_rules.xml -->
 
 ### Does opening a Dropbox connection upload my local tasks?
 
@@ -882,7 +897,7 @@ settings are retained.
 | Context | An `@name` tag describing where or how work happens. |
 | Due date | A target completion date recorded as `due:YYYY-MM-DD`. |
 | Threshold date | A start date recorded as `t:YYYY-MM-DD`. |
-| App Storage | On Android, the app's private folder, removed when the app is uninstalled. |
+| App Storage | On Android, the app's private folder, removed from the device when the app is uninstalled. |
 | External File | On Android, a task file you chose with the system file picker. |
 | Dropbox revision | The remote file version used to detect changes before a save. |
 <!-- Verified from: docs/todo_txt_format.md; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/TodoFileStore.kt; platform/ios/plain_todo/Views/Sheets.swift; docs/DROPBOX.md -->

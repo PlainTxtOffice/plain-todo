@@ -1,4 +1,4 @@
-<!-- last_updated: 2026-11-11 -->
+<!-- last_updated: 2026-11-13 -->
 
 <!-- Authoring guidance: dev-docs/specs/README_SPEC.instructions.md -->
 <!-- rumdl-disable MD033 MD041 -->
@@ -50,8 +50,9 @@ same readable task format. There is no account to create and no advertising.
   dates, `+Project` tags, and `@context` tags.
 - **Everyday editing:** Add, edit, complete, reopen, and delete tasks, with a
   confirmation before deletion.
-- **Flexible organization:** Sort and group tasks by priority, due date,
-  project, or context.
+- **Flexible organization:** Sort tasks by priority or due date, and group
+  them by priority, due date, project, or context. Windows also sorts by
+  project or context.
 - **Archives and exports:** Move completed tasks to `done.txt` and export a
   plain-text copy of your task list.
 - **Direct Dropbox access:** Connect each device to the same file, with
@@ -64,8 +65,9 @@ same readable task format. There is no account to create and no advertising.
   alongside the app's data.
 - **iCloud Drive (iPhone, in development):** Use the app's iCloud Drive
   location.
-- **Recurring tasks (Windows, paid, planned):** Weekly, monthly, and quarterly
-  routines kept in Markdown templates. Not yet available to purchase.
+- **Recurring tasks (Windows, premium, in development):** Weekly, monthly, and
+  quarterly routines kept in Markdown templates, for a paid premium edition.
+  Paid-subscription activation is not currently available.
 
 ## App Screenshot
 
