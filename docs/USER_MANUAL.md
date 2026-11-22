@@ -57,7 +57,7 @@ data; they do not travel with your ordinary task file.
 1. Open the app and choose how to start, as described under
    [Choose a file on Android](#choose-a-file-on-android).
 
-The app is free. It asks for no account and needs no permissions beyond
+The app asks for no account and needs no permissions beyond
 internet access, which is used only for an optional Dropbox connection.
 <!-- Verified from: https://play.google.com/store/apps/details?id=com.plaintxtoffice.plaintodo; platform/android/app/src/main/AndroidManifest.xml -->
 
@@ -70,7 +70,7 @@ internet access, which is used only for an optional Dropbox connection.
 1. Open the app and choose how to start, as described under
    [Choose a file on iPhone](#choose-a-file-on-iphone).
 
-The app is free, with no purchases, and asks for no account.
+The app asks for no account.
 <!-- Verified from: https://apps.apple.com/app/id6837185055; dev-docs/store_listings/app_store.md -->
 
 ### Check Windows availability

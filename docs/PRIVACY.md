@@ -3,7 +3,7 @@
 <!-- Covers the iOS and Android apps. Add Windows and macOS behavior after
 those ports are verified. -->
 
-Updated November 14, 2026.
+Updated November 22, 2026.
 
 ## Tasks and file access
 
@@ -44,8 +44,8 @@ Plain Todo for Android keeps your tasks in a file in the app's private storage
 or in a task file you choose with Android's file picker. Changes are written
 straight to that file, and Export writes a plain-text copy to a destination you
 choose. Android remembers that you allowed the app to read and write a file you
-picked. The app has no accounts, advertising or analytics, sends no
-notifications, and has no in-app purchases.
+picked. The app has no accounts, advertising or analytics, and sends no
+notifications.
 
 The app uses internet access only for Dropbox. If you connect Dropbox in
 Settings, the app sends task and archive contents directly to Dropbox over

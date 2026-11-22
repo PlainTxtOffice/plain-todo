@@ -3,7 +3,7 @@
 <!-- Authoring guidance: dev-docs/specs/README_SPEC.instructions.md -->
 <!-- rumdl-disable MD033 MD041 -->
 <p align="center">
-  <img src="assets/icons/plain_todo.svg" alt="Plain Todo icon" width="96">
+  <img src="assets/icons/icon-github-readme.svg" alt="Plain Todo icon" width="96">
 </p>
 <h1 align="center">Plain Todo</h1>
 <p align="center">
@@ -96,8 +96,8 @@ same readable task format. There is no account to create and no advertising.
 
 | Platform | Download | Notes |
 | --- | --- | --- |
-| Android | [Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.plaintodo) | Free. Requires Android 8.0 or later. |
-| iPhone | [App Store](https://apps.apple.com/app/id6837185055) | Free. Listed as **Plain Todo Text**. Version 1.3.0. Requires iOS 18.5 or later. |
+| Android | [Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.plaintodo) | Requires Android 8.0 or later. |
+| iPhone | [App Store](https://apps.apple.com/app/id6837185055) | Listed as **Plain Todo Text**. Version 1.3.0. Requires iOS 18.5 or later. |
 
 A Windows download will be listed here when that app is released.
 
