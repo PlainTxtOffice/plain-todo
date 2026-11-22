@@ -1,10 +1,10 @@
 ---
-last_updated: 2026-11-13
-version: 5.2.0
+last_updated: 2026-11-22
+version: 5.2.5
 product_versions:
   windows: "1.0.0"
   ios: "1.3.0"
-  android: "1.0.2"
+  android: "1.0.3"
 generated_from: "dev-docs/specs/USER_MANUAL_SPEC.instructions.md"
 ---
 
@@ -23,11 +23,11 @@ interface.
 | --- | --- |
 | Android | Released on Google Play. |
 | Windows | In development. No public download yet. |
-| iPhone | In development. No public download yet. |
-<!-- Verified from: platform/android/app/build.gradle.kts; https://play.google.com/store/apps/details?id=com.plaintxtoffice.plaintodo -->
+| iPhone | Released on the App Store as **Plain Todo Text**, version 1.3.0. |
+<!-- Verified from: platform/android/app/build.gradle.kts; https://play.google.com/store/apps/details?id=com.plaintxtoffice.plaintodo; https://apps.apple.com/app/id6837185055 -->
 
-The Windows and iPhone instructions in this manual describe those apps as they
-are being built. Details can change before they are released.
+The Windows instructions in this manual describe that app as it is being
+built. Details can change before it is released.
 
 Every app can keep its tasks on the device or connect directly to Dropbox.
 Android also opens a file you choose with the system file picker. Windows
@@ -61,11 +61,23 @@ The app is free. It asks for no account and needs no permissions beyond
 internet access, which is used only for an optional Dropbox connection.
 <!-- Verified from: https://play.google.com/store/apps/details?id=com.plaintxtoffice.plaintodo; platform/android/app/src/main/AndroidManifest.xml -->
 
-### Check Windows and iPhone availability
+### Install on iPhone
 
-The Windows and iPhone apps are in development. There is no public installer
-or App Store listing yet, so there are no installation steps for them.
-<!-- Verified from: README.md; docs/DROPBOX.md -->
+1. Open
+   [Plain Todo on the App Store](https://apps.apple.com/app/id6837185055) on
+   your iPhone. The App Store lists it as **Plain Todo Text**.
+1. Tap **Get**.
+1. Open the app and choose how to start, as described under
+   [Choose a file on iPhone](#choose-a-file-on-iphone).
+
+The app is free, with no purchases, and asks for no account.
+<!-- Verified from: https://apps.apple.com/app/id6837185055; dev-docs/store_listings/app_store.md -->
+
+### Check Windows availability
+
+The Windows app is in development. There is no public installer yet, so there
+are no installation steps for it.
+<!-- Verified from: README.md -->
 
 ### Choose your first task file
 
@@ -238,7 +250,7 @@ Task actions save as they occur; the edit sheet uses **Save** and **Cancel**.
 | Add tasks | Type into the box at the bottom and tap the plus button. | **+ Add Task** or **Edit > Add Task...** opens a separate dialog. | Type into the bottom input and tap the plus button. |
 | Organization | **Sort** and **Group** buttons above the list. | **View > Sort By** and **View > Group By**. | **Sort** and **Group** menus above the list. |
 | File location | The line under the add box shows the file name and task counts; **Settings** shows the full location. | The editor shows **File Path**; the window title identifies Dropbox mode. | The footer shows the file name and task counts; **Settings** shows the full path and location. |
-| Help | **Settings > User Guide** explains task syntax; **Privacy** opens the privacy policy; **Send feedback** starts an email to the developer; **Open contact form** opens the website contact form. | **Help > About** identifies the app. | **Settings > User Guide** explains task syntax; **Privacy** opens the privacy policy. |
+| Help | **Settings > User Guide** explains task syntax; **Privacy** opens the privacy policy; **Send feedback** starts an email to the developer; **Open contact form** opens the website contact form. | **Help > About** identifies the app. | **Settings > User Guide** explains task syntax; **Privacy** opens the privacy policy; **Send Feedback** drafts a bug report or feature request email, or opens the website contact form. |
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/TodoAppScreen.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/components/TaskRow.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/SettingsDialog.kt; platform/windows/plain_todo/ui/gui/views/menu_bar/main_menu.py; platform/windows/plain_todo/ui/gui/views/menu_bar/view_menu.py; platform/windows/plain_todo/ui/gui/views/root_window/panes/task_editor.py; platform/ios/plain_todo/ContentView.swift; platform/ios/plain_todo/Views/Sheets.swift -->
 
 On Android, open the gear button at the top right for **Settings**. Each row
@@ -299,7 +311,7 @@ creation date already in your text is retained.
 1. Tap **Save**. The close button at the top left abandons the edit.
 
 Tapping **Due** or **Threshold** opens a calendar. **Today** shows the current
-month without changing the selected date. Select a day and tap **Done**, tap
+month and selects today's date. Select a day and tap **Done**, tap
 **Clear** to remove the date, or tap **Cancel** to leave it unchanged. If a
 save fails, the reason appears at the bottom of the screen and your changes
 stay in place.
@@ -310,20 +322,21 @@ stay in place.
 | Platform | Procedure |
 | --- | --- |
 | Windows | Select a task, change its fields, then click **Save Changes**. Leaving unsaved edits prompts you to save, discard, or cancel. |
-| iPhone | Swipe from the leading edge and choose **Edit**, or long-press and choose **Edit**. Update the text, priority, projects, due date, or threshold date, then tap **Save**. **Cancel** abandons the edit. |
+| iPhone | Swipe from the leading edge and choose **Edit**, or long-press and choose **Edit**. Update the text, priority, projects, contexts, due date, or threshold date, then tap **Save**. Tap a project or context chip to add or remove it. **Cancel** abandons the edit. |
 <!-- Verified from: platform/windows/plain_todo/ui/gui/views/root_window/panes/task_view.py; platform/windows/plain_todo/ui/gui/views/root_window/panes/task_editor.py; platform/ios/plain_todo/ContentView.swift; platform/ios/plain_todo/Views/Sheets.swift [EditTaskSheet] -->
 
-In a date calendar, **Today** navigates to the current month without changing
-the selected date. Select a date to change it. On iPhone, **Clear** removes a
-date and **Done** accepts the selection.
+In the Windows due-date calendar, **Today** sets the due date to today and
+closes the calendar, the same as clicking today's date. On iPhone, **Today**
+shows the current month and selects today's date, **Done** accepts the
+selection, **Clear** removes a date, and **Cancel** leaves it unchanged.
 <!-- Verified from: platform/windows/plain_todo/ui/gui/views/root_window/task_fields.py [_build_due_calendar]; platform/ios/plain_todo/Views/Sheets.swift [DateSelectionSheet, DueDateCalendar] -->
 
 ### View task details
 
 Android and iPhone have a read-only task view.
 
-1. On Android, tap the task. On iPhone, long-press the task and choose
-   **View**.
+1. On Android or iPhone, tap the task. On iPhone you can also long-press the
+   task and choose **View**.
 1. Review its status, dates, and other tags. Project and context sections list
    related tasks; tap one to view its details.
 1. Close the view when you have finished. On iPhone, tap **Done**.
@@ -383,6 +396,13 @@ When grouping by project or context, a task with several tags appears under
 each of them, and tasks without one are collected under **No Project** or
 **No Context**.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/viewmodel/TodoListViewModel.kt [recomputeDerived, computeGroups] -->
+
+On Windows, task rows highlight priorities in gold, `+projects` in green,
+`@contexts` in blue, and due dates in coral. Other dates use gray. Colors adapt
+to light and dark themes. Selected rows use the theme's selection text color for
+readability, and completed tasks use strikethrough. Highlighting changes only
+the display; task files and exports keep their plain text.
+<!-- Verified from: platform/windows/plain_todo/ui/gui/views/root_window/panes/task_syntax.py; platform/windows/plain_todo/ui/gui/views/root_window/panes/task_delegate.py -->
 
 ### Archive completed tasks
 
@@ -484,7 +504,12 @@ also requests a reload when no storage operation is running.
 
 ### Send feedback
 
-Bug reports and feature requests are welcome.
+Send bug reports and feature requests to
+[support@plaintxtoffice.com](mailto:support@plaintxtoffice.com) or through the
+[contact page](https://plaintxtoffice.com/contact/). The Android and iPhone
+apps also have a feedback screen.
+
+#### Send feedback on Android
 
 1. On Android, open **Settings** and scroll to **Feedback**.
 1. Tap **Send feedback**. Your email app opens a draft addressed to
@@ -501,6 +526,22 @@ contact form. If no browser is installed, the app says so; use the email draft
 or write to that address. On any platform you can also open the contact form
 in a browser yourself.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/Feedback.kt; platform/android/app/src/main/res/values/strings.xml; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/PrivacyPolicyDialog.kt -->
+
+#### Send feedback on iPhone
+
+1. Open **Settings** and tap **Send Feedback** in the **Feedback** section.
+1. Tap **Report a bug** or **Request a feature**. Your email app opens a draft
+   addressed to `support@plaintxtoffice.com` that already contains the app
+   version, the iOS version, and the device model. Your tasks are not
+   included.
+1. Describe what happened or what you would like, review the draft, and send
+   it. Nothing is sent until you send the email.
+1. To use the website instead, tap **Open contact form**.
+1. Tap **Done** to close the screen.
+
+If no email app is set up, the screen says so; use **Open contact form** or
+write to `support@plaintxtoffice.com` from any email account.
+<!-- Verified from: platform/ios/plain_todo/Feedback.swift; platform/ios/plain_todo/Views/Sheets.swift [SettingsSheet] -->
 
 ### Recurring tasks on Windows (premium, in development)
 
@@ -615,6 +656,7 @@ launches; sort and group choices are separate session controls.
 | **Sync with iCloud Drive** | Off | Selects the app's iCloud file; disabling returns to local app storage. |
 | **Dropbox Connection…** | Disconnected | Browser sign-in and two distinct Dropbox paths; authorization is saved in Keychain. Takes effect immediately after validation and persists between launches. |
 | **Notifications** | Current system permission | **Enable Alerts and Badges** requests permission; otherwise **Open Notification Settings** opens the system controls. |
+| **Send Feedback** | Not applicable | Opens the feedback screen described under [Send feedback on iPhone](#send-feedback-on-iphone). |
 <!-- Verified from: platform/ios/plain_todo/Views/Sheets.swift; platform/ios/plain_todo/ContentView.swift; platform/ios/plain_todo/Views/DropboxConnectionSheet.swift; platform/ios/plain_todo/Storage/Dropbox/DropboxCredentials.swift -->
 
 The app updates its badge count for incomplete tasks due today or earlier.
@@ -826,9 +868,10 @@ Renaming a task outside the app can leave an old note without its task.
 
 ### Which Plain Todo apps can I download today?
 
-The Android app, from Google Play. The Windows and iPhone apps are still in
+The Android app, from Google Play, and the iPhone app, from the App Store,
+where it is listed as **Plain Todo Text**. The Windows app is still in
 development.
-<!-- Verified from: https://play.google.com/store/apps/details?id=com.plaintxtoffice.plaintodo; README.md -->
+<!-- Verified from: https://play.google.com/store/apps/details?id=com.plaintxtoffice.plaintodo; https://apps.apple.com/app/id6837185055; README.md -->
 
 ### Do I need Dropbox?
 

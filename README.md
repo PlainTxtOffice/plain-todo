@@ -1,4 +1,4 @@
-<!-- last_updated: 2026-11-13 -->
+<!-- last_updated: 2026-11-22 -->
 
 <!-- Authoring guidance: dev-docs/specs/README_SPEC.instructions.md -->
 <!-- rumdl-disable MD033 MD041 -->
@@ -7,13 +7,13 @@
 </p>
 <h1 align="center">Plain Todo</h1>
 <p align="center">
-  Manage everyday tasks in readable todo.txt files on Android, Windows, and iPhone.
+  Manage everyday tasks in readable todo.txt files on Android and iPhone.
 </p>
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Proprietary-blue" alt="License: Proprietary"></a>
   <a href="#android"><img src="https://img.shields.io/badge/platform-Android-3DDC84" alt="Platform: Android"></a>
   <a href="#windows-in-development"><img src="https://img.shields.io/badge/platform-Windows-0078D4" alt="Platform: Windows"></a>
-  <a href="docs/USER_MANUAL.md"><img src="https://img.shields.io/badge/platform-iOS-555555" alt="Platform: iOS"></a>
+  <a href="#download"><img src="https://img.shields.io/badge/platform-iOS-555555" alt="Platform: iOS"></a>
 </p>
 <!-- rumdl-enable MD033 MD041 -->
 
@@ -22,9 +22,11 @@
 ## About
 
 **Development status:** The Android app is available on
-[Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.plaintodo).
-The Windows and iPhone versions are still in development and have no public
-download yet.
+[Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.plaintodo),
+and the iPhone app on the
+[App Store](https://apps.apple.com/app/id6837185055), where it is listed as
+**Plain Todo Text**. The Windows version is still in development and has no
+public download yet.
 
 Plain Todo keeps your tasks in plain text that you can read and edit with other
 todo.txt applications. Add priorities, projects, contexts, and due dates, then
@@ -63,8 +65,7 @@ same readable task format. There is no account to create and no advertising.
   and related tasks, and set due and threshold dates with calendar controls.
 - **Notes (Windows, in development):** Keep optional task notes locally
   alongside the app's data.
-- **iCloud Drive (iPhone, in development):** Use the app's iCloud Drive
-  location.
+- **iCloud Drive (iPhone):** Use the app's iCloud Drive location.
 - **Recurring tasks (Windows, premium, in development):** Weekly, monthly, and
   quarterly routines kept in Markdown templates, for a paid premium edition.
   Paid-subscription activation is not currently available.
@@ -96,8 +97,9 @@ same readable task format. There is no account to create and no advertising.
 | Platform | Download | Notes |
 | --- | --- | --- |
 | Android | [Google Play](https://play.google.com/store/apps/details?id=com.plaintxtoffice.plaintodo) | Free. Requires Android 8.0 or later. |
+| iPhone | [App Store](https://apps.apple.com/app/id6837185055) | Free. Listed as **Plain Todo Text**. Version 1.3.0. Requires iOS 18.5 or later. |
 
-Windows and iPhone downloads will be listed here when those apps are released.
+A Windows download will be listed here when that app is released.
 
 ## User Manual
 
@@ -107,9 +109,12 @@ troubleshooting.
 
 ## Feedback
 
-Bug reports and feature requests are welcome. In the Android app, open
-**Settings** and tap **Send feedback**. You can also use the
-[contact form](https://plaintxtoffice.com/contact/) on plaintxtoffice.com.
+Send bug reports and feature requests to
+[support@plaintxtoffice.com](mailto:support@plaintxtoffice.com) or through the
+[contact page](https://plaintxtoffice.com/contact/). In the Android app, open
+**Settings** and tap **Send feedback**. In the iPhone app, open **Settings**
+and tap **Send Feedback**, then choose **Report a bug**, **Request a
+feature**, or **Open contact form**.
 
 ## Source and License
 
