@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-11-22
-version: 5.2.5
+version: 6.0.0
 product_versions:
   windows: "1.0.0"
   ios: "1.3.0"
@@ -22,7 +22,7 @@ interface.
 | Platform | Status |
 | --- | --- |
 | Android | Released on Google Play. |
-| Windows | In development. No public download yet. |
+| Windows (in development) | In development. No public download yet. |
 | iPhone | Released on the App Store as **Plain Todo Text**, version 1.3.0. |
 <!-- Verified from: platform/android/app/build.gradle.kts; https://play.google.com/store/apps/details?id=com.plaintxtoffice.plaintodo; https://apps.apple.com/app/id6837185055 -->
 
@@ -30,10 +30,11 @@ The Windows instructions in this manual describe that app as it is being
 built. Details can change before it is released.
 
 Every app can keep its tasks on the device or connect directly to Dropbox.
-Android also opens a file you choose with the system file picker. Windows
-works with a local file. iPhone supports app storage, a file imported through
-Files, or the app's iCloud Drive location. Windows notes are separate local
-data; they do not travel with your ordinary task file.
+Android also opens a file you choose with the system file picker. The Windows
+app (in development) works with a local file. iPhone supports app storage, a
+file imported through Files, or the app's iCloud Drive location. Windows (in
+development) notes are separate local data; they do not travel with your
+ordinary task file.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/TodoStorage.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/TodoFileStore.kt; platform/windows/plain_todo/bootstrap.py; platform/windows/plain_todo/config/path_handler.py; platform/ios/plain_todo/Storage/TodoFileStore.swift; platform/ios/plain_todo/Storage/TodoStorage.swift -->
 
 ## Installation and Setup
@@ -43,7 +44,7 @@ data; they do not travel with your ordinary task file.
 | Platform | Verified requirements |
 | --- | --- |
 | Android | Android 8.0 or later. |
-| Windows | A writable data location. A minimum Windows version has not been set. |
+| Windows (in development) | A writable data location. A minimum Windows version has not been set. |
 | iPhone | iOS 18.5 or later. The app target is configured for iPhone. |
 | Direct Dropbox on any platform | Internet access, a Dropbox account, and an existing task file in Dropbox. Plain Todo includes its app identity. |
 <!-- Verified from: platform/android/app/build.gradle.kts [minSdk]; platform/windows/plain_todo/config/path_handler.py; platform/ios/plain_todo.xcodeproj/project.pbxproj; docs/DROPBOX.md -->
@@ -73,7 +74,7 @@ internet access, which is used only for an optional Dropbox connection.
 The app asks for no account.
 <!-- Verified from: https://apps.apple.com/app/id6837185055; dev-docs/store_listings/app_store.md -->
 
-### Check Windows availability
+### Check Windows availability (in development)
 
 The Windows app is in development. There is no public installer yet, so there
 are no installation steps for it.
@@ -98,7 +99,7 @@ saved directly to it. If you skip linking an archive, archived tasks are
 stored in the app.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/FirstLaunchDialog.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/TodoAppScreen.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/viewmodel/TodoListViewModel.kt [seedStarterTasksIfNeeded]; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/TodoFileStore.kt -->
 
-#### Choose a file on Windows
+#### Choose a file on Windows (in development)
 
 1. Open **Edit > Settings...**.
 1. Use **Browse...** beside **Todo file** to select an existing text file.
@@ -152,7 +153,7 @@ offline queue or local copy of the Dropbox task file, so an internet
 connection is required while connected.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/dropbox/DropboxCredentials.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/PrivacyPolicyDialog.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/dropbox/DropboxTaskStore.kt -->
 
-#### Connect Windows to Dropbox
+#### Connect Windows to Dropbox (in development)
 
 1. Prepare an existing UTF-8 task file in Dropbox and choose a different archive
    path. For example, use `/documents/todo/todo.txt` and
@@ -226,7 +227,7 @@ there is nothing to save before leaving. Leave the app with the system Home or
 Back gesture.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/TodoAppScreen.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/viewmodel/TodoListViewModel.kt [commit, requestReload]; platform/android/app/src/main/res/values/strings.xml -->
 
-### Open and close Windows
+### Open and close Windows (in development)
 
 Development builds start from `PlainTodo.exe`.
 <!-- Verified from: platform/windows/scripts/nuitka/onefile.ps1 -->
@@ -244,14 +245,14 @@ Task actions save as they occur; the edit sheet uses **Save** and **Cancel**.
 
 ## Getting Around
 
-| Area | Android | Windows | iPhone |
+| Area | Android | Windows (in development) | iPhone |
 | --- | --- | --- | --- |
 | Task list | Tap a row to view the task; use its checkbox to toggle completion. The three-dot button, or a long press, opens **Complete** or **Uncomplete**, **View**, **Edit**, and **Delete**. | Select a row to edit; use its checkbox to toggle completion. | Long-press a row for **Complete** or **Uncomplete**, **View**, **Edit**, and **Delete**. |
 | Add tasks | Type into the box at the bottom and tap the plus button. | **+ Add Task** or **Edit > Add Task...** opens a separate dialog. | Type into the bottom input and tap the plus button. |
 | Organization | **Sort** and **Group** buttons above the list. | **View > Sort By** and **View > Group By**. | **Sort** and **Group** menus above the list. |
 | File location | The line under the add box shows the file name and task counts; **Settings** shows the full location. | The editor shows **File Path**; the window title identifies Dropbox mode. | The footer shows the file name and task counts; **Settings** shows the full path and location. |
-| Help | **Settings > User Guide** explains task syntax; **Privacy** opens the privacy policy; **Send feedback** starts an email to the developer; **Open contact form** opens the website contact form. | **Help > About** identifies the app. | **Settings > User Guide** explains task syntax; **Privacy** opens the privacy policy; **Send Feedback** drafts a bug report or feature request email, or opens the website contact form. |
-<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/TodoAppScreen.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/components/TaskRow.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/SettingsDialog.kt; platform/windows/plain_todo/ui/gui/views/menu_bar/main_menu.py; platform/windows/plain_todo/ui/gui/views/menu_bar/view_menu.py; platform/windows/plain_todo/ui/gui/views/root_window/panes/task_editor.py; platform/ios/plain_todo/ContentView.swift; platform/ios/plain_todo/Views/Sheets.swift -->
+| Help | **Settings > User Guide** explains task syntax; **Privacy** opens the privacy policy; **Send feedback** starts an email to the developer; **Open contact form** opens the website contact form. | **Help > Send Feedback...** drafts a bug report or feature request email, or opens the website contact form; **Help > About** identifies the app. | **Settings > User Guide** explains task syntax; **Privacy** opens the privacy policy; **Send Feedback** drafts a bug report or feature request email, or opens the website contact form. |
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/TodoAppScreen.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/components/TaskRow.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/SettingsDialog.kt; platform/windows/plain_todo/ui/gui/views/menu_bar/main_menu.py; platform/windows/plain_todo/ui/gui/feedback.py; platform/windows/plain_todo/ui/gui/views/menu_bar/view_menu.py; platform/windows/plain_todo/ui/gui/views/root_window/panes/task_editor.py; platform/ios/plain_todo/ContentView.swift; platform/ios/plain_todo/Views/Sheets.swift -->
 
 On Android, open the gear button at the top right for **Settings**. Each row
 shows the task exactly as it is written in the file, with color as a reading
@@ -276,7 +277,7 @@ A priority or creation date already in your text is kept. If the line cannot
 be saved, a **Notice** explains why and your text stays in the box.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/TodoAppScreen.kt [AddTaskBar]; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/components/SuggestionBar.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/viewmodel/TodoListViewModel.kt [addWithSettings] -->
 
-#### Add a task on Windows
+#### Add a task on Windows (in development)
 
 1. Choose **+ Add Task**.
 1. Enter the task title.
@@ -317,17 +318,17 @@ save fails, the reason appears at the bottom of the screen and your changes
 stay in place.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/EditTaskDialog.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/components/TaskRow.kt -->
 
-#### Edit a task on Windows and iPhone
+#### Edit a task on Windows (in development) and iPhone
 
 | Platform | Procedure |
 | --- | --- |
-| Windows | Select a task, change its fields, then click **Save Changes**. Leaving unsaved edits prompts you to save, discard, or cancel. |
+| Windows (in development) | Select a task, change its fields, then click **Save Changes**. Leaving unsaved edits prompts you to save, discard, or cancel. |
 | iPhone | Swipe from the leading edge and choose **Edit**, or long-press and choose **Edit**. Update the text, priority, projects, contexts, due date, or threshold date, then tap **Save**. Tap a project or context chip to add or remove it. **Cancel** abandons the edit. |
 <!-- Verified from: platform/windows/plain_todo/ui/gui/views/root_window/panes/task_view.py; platform/windows/plain_todo/ui/gui/views/root_window/panes/task_editor.py; platform/ios/plain_todo/ContentView.swift; platform/ios/plain_todo/Views/Sheets.swift [EditTaskSheet] -->
 
-In the Windows due-date calendar, **Today** sets the due date to today and
-closes the calendar, the same as clicking today's date. On iPhone, **Today**
-shows the current month and selects today's date, **Done** accepts the
+In the Windows (in development) due-date calendar, **Today** sets the due date
+to today and closes the calendar, the same as clicking today's date. On iPhone,
+**Today** shows the current month and selects today's date, **Done** accepts the
 selection, **Clear** removes a date, and **Cancel** leaves it unchanged.
 <!-- Verified from: platform/windows/plain_todo/ui/gui/views/root_window/task_fields.py [_build_due_calendar]; platform/ios/plain_todo/Views/Sheets.swift [DateSelectionSheet, DueDateCalendar] -->
 
@@ -351,7 +352,7 @@ A completed task with a creation date also shows how many days it took.
 | Platform | Procedure |
 | --- | --- |
 | Android | Tap the task's checkbox, or open the task's menu and choose **Complete** or **Uncomplete**. |
-| Windows | Click the task checkbox, or select the task and choose **Edit > Toggle Complete**. |
+| Windows (in development) | Click the task checkbox, or select the task and choose **Edit > Toggle Complete**. |
 | iPhone | Long-press the task and choose **Complete** or **Uncomplete**. |
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/components/TaskRow.kt; platform/windows/plain_todo/ui/gui/views/menu_bar/main_menu.py; platform/windows/plain_todo/ui/gui/views/root_window/panes/task_view.py; platform/ios/plain_todo/ContentView.swift [TaskRowView] -->
 
@@ -365,15 +366,16 @@ but does not bring the priority back; edit the task to set it again.
 
 ### Delete a task
 
-1. On Android, open the task's menu and choose **Delete**. On Windows, select
-   the task and choose **Edit > Delete Task**. On iPhone, swipe left on the row
-   and choose **Delete**.
+1. On Android, open the task's menu and choose **Delete**. On Windows (in
+   development), select the task and choose **Edit > Delete Task**. On iPhone,
+   swipe left on the row and choose **Delete**.
 1. Review the confirmation.
 1. Confirm deletion, or choose **Cancel** to keep the task.
 
-Android and iPhone show the task text in the confirmation. Windows defaults the
-confirmation to **Cancel**. Deleting removes the task from the working file;
-use completion and archiving if you want to keep it in `done.txt`.
+Android and iPhone show the task text in the confirmation. Windows (in
+development) defaults the confirmation to **Cancel**. Deleting removes the task
+from the working file; use completion and archiving if you want to keep it in
+`done.txt`.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/TodoAppScreen.kt; platform/windows/plain_todo/ui/gui/views/root_window/panes/task_view.py [delete_selected]; platform/ios/plain_todo/ContentView.swift -->
 
 ### Arrange your task list
@@ -381,14 +383,14 @@ use completion and archiving if you want to keep it in `done.txt`.
 | Platform | Sort choices | Group choices |
 | --- | --- | --- |
 | Android | Priority; Due; Priority, then Due; Due, then Priority | None, Priority, Due, Project, Context |
-| Windows | Completion, Due Date, Priority, Created Date, Alphabetical, Project, Context | None, Completion, Due Date, Priority, Project, Context |
+| Windows (in development) | Completion, Due Date, Priority, Created Date, Alphabetical, Project, Context | None, Completion, Due Date, Priority, Project, Context |
 | iPhone | Priority, Due, Priority then Due, Due then Priority | None, Priority, Due, Project, Context |
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/viewmodel/TodoListViewModel.kt [Sort, Grouping]; platform/windows/plain_todo/ui/gui/views/menu_bar/view_menu.py; platform/ios/plain_todo/ContentView.swift -->
 
 Android and iPhone start with **Priority** sorting and no grouping; their sort
-and group choices last until the app is closed. Windows starts with
-**Completion** sorting, no grouping, and **Show todo.txt Lines** enabled; these
-choices are saved.
+and group choices last until the app is closed. Windows (in development) starts
+with **Completion** sorting, no grouping, and **Show todo.txt Lines** enabled;
+these choices are saved.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/viewmodel/TodoListViewModel.kt [TodoListUiState]; platform/windows/plain_todo/config/settings.py; platform/windows/plain_todo/ui/gui/views/root_window/panes/task_view.py; platform/ios/plain_todo/ViewModels/TodoListViewModel.swift -->
 
 On Android, every sort except **Due** lists open tasks before completed ones.
@@ -397,11 +399,11 @@ each of them, and tasks without one are collected under **No Project** or
 **No Context**.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/viewmodel/TodoListViewModel.kt [recomputeDerived, computeGroups] -->
 
-On Windows, task rows highlight priorities in gold, `+projects` in green,
-`@contexts` in blue, and due dates in coral. Other dates use gray. Colors adapt
-to light and dark themes. Selected rows use the theme's selection text color for
-readability, and completed tasks use strikethrough. Highlighting changes only
-the display; task files and exports keep their plain text.
+On Windows (in development), task rows highlight priorities in gold, `+projects`
+in green, `@contexts` in blue, and due dates in coral. Other dates use gray.
+Colors adapt to light and dark themes. Selected rows use the theme's selection
+text color for readability, and completed tasks use strikethrough. Highlighting
+changes only the display; task files and exports keep their plain text.
 <!-- Verified from: platform/windows/plain_todo/ui/gui/views/root_window/panes/task_syntax.py; platform/windows/plain_todo/ui/gui/views/root_window/panes/task_delegate.py -->
 
 ### Archive completed tasks
@@ -434,7 +436,7 @@ the app reports that archiving may be partly complete, review both files, then
 close and reopen the app before archiving again.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/dropbox/DropboxTaskStore.kt [archive]; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/api/dropbox/DropboxError.kt -->
 
-#### Archive tasks on Windows
+#### Archive tasks on Windows (in development)
 
 1. Choose **File > Archive Completed**.
 1. Review the completed-task count and destination.
@@ -481,7 +483,7 @@ Dropbox connection when Dropbox reports a newer version or does not confirm a
 save.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/TodoAppScreen.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/SettingsDialog.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/TodoFileStore.kt [save]; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/viewmodel/TodoListViewModel.kt [saveInternal] -->
 
-#### Reload on Windows
+#### Reload on Windows (in development)
 
 Choose **File > Reload Tasks**. Resolve any unsaved edits first.
 Local-file changes can also trigger a reload prompt. Accepting that prompt
@@ -502,54 +504,16 @@ latest list from Dropbox. Review it before trying the edit again. Use
 also requests a reload when no storage operation is running.
 <!-- Verified from: platform/ios/plain_todo/ContentView.swift; platform/ios/plain_todo/Views/Sheets.swift; platform/ios/plain_todo/ViewModels/TodoListViewModel.swift [save]; platform/ios/plain_todo/Storage/Dropbox/DropboxTaskStore.swift -->
 
-### Send feedback
-
-Send bug reports and feature requests to
-[support@plaintxtoffice.com](mailto:support@plaintxtoffice.com) or through the
-[contact page](https://plaintxtoffice.com/contact/). The Android and iPhone
-apps also have a feedback screen.
-
-#### Send feedback on Android
-
-1. On Android, open **Settings** and scroll to **Feedback**.
-1. Tap **Send feedback**. Your email app opens a draft addressed to
-   `support@plaintxtoffice.com` that already contains the app version, the
-   Android version, and the device model.
-1. Describe what happened or what you would like, review the draft, and send
-   it. Nothing is sent until you send the email.
-1. To use the website instead, tap **Open contact form**. Your browser opens
-   the contact form at
-   [plaintxtoffice.com/contact](https://plaintxtoffice.com/contact/).
-
-If no email app is installed, write to that address directly or use the
-contact form. If no browser is installed, the app says so; use the email draft
-or write to that address. On any platform you can also open the contact form
-in a browser yourself.
-<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/Feedback.kt; platform/android/app/src/main/res/values/strings.xml; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/PrivacyPolicyDialog.kt -->
-
-#### Send feedback on iPhone
-
-1. Open **Settings** and tap **Send Feedback** in the **Feedback** section.
-1. Tap **Report a bug** or **Request a feature**. Your email app opens a draft
-   addressed to `support@plaintxtoffice.com` that already contains the app
-   version, the iOS version, and the device model. Your tasks are not
-   included.
-1. Describe what happened or what you would like, review the draft, and send
-   it. Nothing is sent until you send the email.
-1. To use the website instead, tap **Open contact form**.
-1. Tap **Done** to close the screen.
-
-If no email app is set up, the screen says so; use **Open contact form** or
-write to `support@plaintxtoffice.com` from any email account.
-<!-- Verified from: platform/ios/plain_todo/Feedback.swift; platform/ios/plain_todo/Views/Sheets.swift [SettingsSheet] -->
-
 ### Recurring tasks on Windows (premium, in development)
 
 Recurring tasks are being developed for a premium Windows edition.
 Paid-subscription activation is not currently available. The
 [Premium Recurring Tasks guide](RECURRING_TASKS.md) explains the feature, its
-limits, and setup for an edition with access enabled.
-<!-- Verified from: docs/RECURRING_TASKS.md -->
+limits, and setup for an edition with access enabled. Without Premium, the
+Windows app (in development) manages ordinary todo.txt tasks; Premium adds
+weekly, monthly, and quarterly recurring templates and completion tracking for
+each period.
+<!-- Verified from: docs/RECURRING_TASKS.md; platform/windows/plain_todo/domains/premium/access.py; platform/windows/plain_todo/application/recurring.py; platform/windows/plain_todo/bootstrap.py -->
 
 The feature provides weekly, monthly, and quarterly Markdown templates,
 completion tracking for each period, and a separate current-work list. Ordinary
@@ -593,7 +557,7 @@ The **File** section of **Settings** shows where the working file is and its
 buttons are described under [Importing and Exporting](#importing-and-exporting).
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/SettingsDialog.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/TodoFileStore.kt [storageTypeLabel]; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/TodoStorage.kt [storageTypeLabel] -->
 
-### Adjust Windows preferences
+### Adjust Windows preferences (in development)
 
 Open **Edit > Settings...**, make changes, then choose **Save**.
 **Cancel** abandons changes. Preferences are persisted in `settings.json`
@@ -671,7 +635,7 @@ task reminders.
 | Platform | Procedure |
 | --- | --- |
 | Android | Open **Settings** and tap **Import a TODO.txt File**, then select a text file in the system file picker. |
-| Windows | Select the file through **Edit > Settings...** and restart. |
+| Windows (in development) | Select the file through **Edit > Settings...** and restart. |
 | iPhone | Use **Settings > Import a TODO.txt File**. |
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/SettingsDialog.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/TodoAppScreen.kt; platform/windows/plain_todo/ui/gui/views/settings/settings_dialog.py; platform/ios/plain_todo/Views/Sheets.swift -->
 
@@ -686,19 +650,19 @@ a direct Dropbox connection is active.
 ### Export a plain-text copy
 
 1. On Android or iPhone, choose **Settings > Export TODO.txt Copy**. On
-   Windows, choose **File > Export...**.
+   Windows (in development), choose **File > Export...**.
 1. Choose the destination and file name. Android suggests `todo.txt`.
 1. Finish the save dialog.
 
 Export produces a plain-text copy of the working task file. It does not change
-the working file. Windows local notes are not included. On Windows, the
-selected output file is replaced rather than merged; choose a new filename to
-keep an existing export.
+the working file. Windows (in development) local notes are not included. On
+Windows, the selected output file is replaced rather than merged; choose a new
+filename to keep an existing export.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/TodoAppScreen.kt [exportTodoLauncher]; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/TodoFileStore.kt [exportText]; platform/windows/plain_todo/ui/gui/views/root_window/panes/task_view.py [export_tasks]; platform/ios/plain_todo/ContentView.swift [exportCurrentFile] -->
 
 ## Commands and Shortcuts
 
-| Windows action | Shortcut |
+| Windows action (in development) | Shortcut |
 | --- | --- |
 | Add task | Ctrl+N |
 | Toggle selected task completion | Ctrl+Enter |
@@ -749,7 +713,7 @@ changed. Lines it does not recognize as tasks, and the file's existing line
 endings, are left as they were.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/TodoFileStore.kt [load, save] -->
 
-#### Locate your data on Windows
+#### Locate your data on Windows (in development)
 
 | Windows distribution | App data root |
 | --- | --- |
@@ -797,7 +761,7 @@ x 2026-10-27 2026-10-26 Buy envelopes +Home
 | --- | --- |
 | `(A)` | Optional uppercase priority at the start of an incomplete task; A is highest. |
 | `2026-10-27` | Optional creation date after priority, or at the start without priority. |
-| `+Health` | Project tag; use one whitespace-free token per project. |
+| `+Health` | Project tag; use one token without spaces per project. |
 | `@phone` | Context tag describing a place or situation. |
 | `due:2026-11-02` | Due-date metadata. |
 | `t:2026-11-01` | Threshold/start-date metadata; Android and iPhone have a dedicated editor field. |
@@ -811,9 +775,9 @@ This diagram shows where each part sits in a task line. The
 ![A completed todo.txt task line with its completion mark, priority, completion date, creation date, description, project tag, context tag, and key:value tag labeled](../assets/description.svg)
 <!-- Verified from: assets/description.svg; docs/todo_txt_format.md -->
 
-Keep a meaningful title. Android and iPhone offer None and A–E in their
-priority controls; other uppercase priority letters can be typed in a task
-line. Priority selection on Windows follows the configured range. Formatting
+Keep a meaningful title. Android and iPhone offer None and A–E in their priority
+controls; other uppercase priority letters can be typed in a task line. Priority
+selection on Windows (in development) follows the configured range. Formatting
 features in the file do not necessarily have dedicated controls on every
 platform.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/EditTaskDialog.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/SettingsDialog.kt; platform/windows/plain_todo/ui/gui/views/root_window/task_fields.py; platform/ios/plain_todo/Views/Sheets.swift; platform/ios/plain_todo/Domain/TodoParser.swift -->
@@ -821,11 +785,11 @@ platform.
 ### Understand synchronization and conflicts
 
 A task file opened through the Android file picker, the iPhone Files picker, or
-a Dropbox-synced folder on Windows is an ordinary file to Plain Todo; its
-provider decides when and how it synchronizes. Direct Dropbox mode instead
-reads and writes through Dropbox and requires connectivity; it has no offline
-write queue or local copy of the tasks. Other editors and devices may still
-generate Dropbox conflicted copies.
+a Dropbox-synced folder on Windows (in development) is an ordinary file to Plain
+Todo; its provider decides when and how it synchronizes. Direct Dropbox mode
+instead reads and writes through Dropbox and requires connectivity; it has no
+offline write queue or local copy of the tasks. Other editors and devices may
+still generate Dropbox conflicted copies.
 <!-- Verified from: docs/DROPBOX.md; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/TodoFileStore.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/dropbox/DropboxTaskStore.kt -->
 
 If a remote save detects a changed revision, reload and review the latest
@@ -836,8 +800,8 @@ requires reviewing both `todo.txt` and `done.txt` before restarting and
 trying again.
 <!-- Verified from: docs/DROPBOX.md -->
 
-Windows notes are associated with the task's creation date and title.
-Renaming a task outside the app can leave an old note without its task.
+Windows (in development) notes are associated with the task's creation date and
+title. Renaming a task outside the app can leave an old note without its task.
 <!-- Verified from: platform/windows/plain_todo/adapters/storage/notes.py -->
 
 ## Troubleshooting
@@ -855,10 +819,10 @@ Renaming a task outside the app can leave an old note without its task.
 | A Dropbox file changed since loading | Reload, review the current list, and repeat only the edits still needed. |
 | A Dropbox write has an uncertain result | Reload before retrying; check whether the intended change is already present. |
 | Archiving reports a partial or uncertain result | Review both task and archive files before restarting and retrying to avoid duplicate archive entries. |
-| Windows says the todo file is missing | Select an existing file in **Settings**, save, and restart. |
-| Windows cannot load Dropbox tasks | Check connectivity and the connection paths; use **Retry** or **Dropbox Connection…** in the startup error dialog. |
-| Windows warns about conflicted copies | Compare the named files and preserve any needed tasks before deleting copies yourself. |
-| Windows rejects priority settings | Use single uppercase letters A–Z with the minimum alphabetically before or equal to the maximum. |
+| Windows (in development) says the todo file is missing | Select an existing file in **Settings**, save, and restart. |
+| Windows (in development) cannot load Dropbox tasks | Check connectivity and the connection paths; use **Retry** or **Dropbox Connection…** in the startup error dialog. |
+| Windows (in development) warns about conflicted copies | Compare the named files and preserve any needed tasks before deleting copies yourself. |
+| Windows (in development) rejects priority settings | Use single uppercase letters A–Z with the minimum alphabetically before or equal to the maximum. |
 | iPhone says access to the selected file was lost | Re-import the intended file in **Settings** to grant access again. |
 | iCloud cannot be enabled | Keep using the previous location; availability depends on the account and the app's iCloud configuration. |
 | iPhone archive is not beside an imported task file | Link the intended `done.txt`; without separate permission the archive uses app storage. |
@@ -875,9 +839,9 @@ development.
 
 ### Do I need Dropbox?
 
-No. Android and iPhone can keep the list in app storage or in a file you
-choose. Windows accepts a readable and writable local file. Dropbox and iCloud
-are optional file-location choices.
+No. Android and iPhone can keep the list in app storage or in a file you choose.
+The Windows app (in development) accepts a readable and writable local file.
+Dropbox and iCloud are optional file-location choices.
 <!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/storage/TodoFileStore.kt; platform/windows/plain_todo/config/settings.py; platform/ios/plain_todo/Storage/TodoFileStore.swift -->
 
 ### Do I need an account?
@@ -912,7 +876,8 @@ create them.
 
 ### Why are my Windows notes missing on my phone?
 
-Notes live in Windows' local `data/notes.json`, not in `todo.txt`.
+The Windows app is in development. Its notes live in the local
+`data/notes.json`, not in `todo.txt`.
 Ordinary exports and the direct Dropbox connection do not sync those notes.
 <!-- Verified from: platform/windows/plain_todo/config/path_handler.py; docs/DROPBOX.md -->
 
@@ -924,10 +889,73 @@ Export your current list first if you need a separate copy.
 
 ### How do I return Windows to a local file?
 
-Open **File > Dropbox Connection...**, choose
-**Disconnect and use local file**, and restart. Your previous local-file
+In the Windows app (in development), open **File > Dropbox Connection...**,
+choose **Disconnect and use local file**, and restart. Your previous local-file
 settings are retained.
 <!-- Verified from: docs/DROPBOX.md; platform/windows/plain_todo/ui/gui/views/settings/dropbox_dialog.py -->
+
+## Feedback
+
+Send bug reports and feature requests to
+[support@plaintxtoffice.com](mailto:support@plaintxtoffice.com) or through the
+[contact page](https://plaintxtoffice.com/contact/). The Android and iPhone
+apps, and the Windows app (in development), also have a feedback screen that
+drafts the email for you.
+
+| Platform | How to open feedback |
+| --- | --- |
+| Android | Open **Settings** and scroll to **Feedback**. |
+| Windows (in development) | Choose **Help > Send Feedback...**. |
+| iPhone | Open **Settings** and tap **Send Feedback** in the **Feedback** section. |
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/Feedback.kt; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/SettingsDialog.kt; platform/windows/plain_todo/ui/gui/feedback.py [add_feedback_action]; platform/windows/plain_todo/ui/gui/views/menu_bar/main_menu.py [_build_help_menu]; platform/ios/plain_todo/Feedback.swift; platform/ios/plain_todo/Views/Sheets.swift [SettingsSheet] -->
+
+### Send feedback on Android
+
+1. On Android, open **Settings** and scroll to **Feedback**.
+1. Tap **Send feedback**. Your email app opens a draft addressed to
+   `support@plaintxtoffice.com` that already contains the app version, the
+   Android version, and the device model.
+1. Describe what happened or what you would like, review the draft, and send
+   it. Nothing is sent until you send the email.
+1. To use the website instead, tap **Open contact form**. Your browser opens
+   the contact form at
+   [plaintxtoffice.com/contact](https://plaintxtoffice.com/contact/).
+
+If no email app is installed, write to that address directly or use the
+contact form. If no browser is installed, the app says so; use the email draft
+or write to that address. On any platform you can also open the contact form
+in a browser yourself.
+<!-- Verified from: platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/Feedback.kt; platform/android/app/src/main/res/values/strings.xml; platform/android/app/src/main/kotlin/com/plaintxtoffice/plaintodo/ui/sheets/PrivacyPolicyDialog.kt -->
+
+### Send feedback on Windows (in development)
+
+1. Choose **Help > Send Feedback...**.
+1. Click **Report a Bug** or **Request a Feature**. Your email app opens a
+   draft addressed to `support@plaintxtoffice.com` that already contains the
+   app version and the Windows version. Your tasks are not included.
+1. Describe what happened or what you would like, review the draft, and send
+   it. Nothing is sent until you send the email.
+1. To use the website instead, click **Open Contact Form**.
+
+If no email app is set up, the dialog says so; use **Open Contact Form** or
+write to `support@plaintxtoffice.com` from any email account.
+<!-- Verified from: platform/windows/plain_todo/ui/gui/feedback.py -->
+
+### Send feedback on iPhone
+
+1. Open **Settings** and tap **Send Feedback** in the **Feedback** section.
+1. Tap **Report a bug** or **Request a feature**. Your email app opens a draft
+   addressed to `support@plaintxtoffice.com` that already contains the app
+   version, the iOS version, and the device model. Your tasks are not
+   included.
+1. Describe what happened or what you would like, review the draft, and send
+   it. Nothing is sent until you send the email.
+1. To use the website instead, tap **Open contact form**.
+1. Tap **Done** to close the screen.
+
+If no email app is set up, the screen says so; use **Open contact form** or
+write to `support@plaintxtoffice.com` from any email account.
+<!-- Verified from: platform/ios/plain_todo/Feedback.swift; platform/ios/plain_todo/Views/Sheets.swift [SettingsSheet] -->
 
 ## Glossary
 

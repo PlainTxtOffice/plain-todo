@@ -7,13 +7,12 @@
 </p>
 <h1 align="center">Plain Todo</h1>
 <p align="center">
-  Manage everyday tasks in readable todo.txt files on Android and iPhone.
+  Manage everyday tasks in readable todo.txt files.
 </p>
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Proprietary-blue" alt="License: Proprietary"></a>
-  <a href="#android"><img src="https://img.shields.io/badge/platform-Android-3DDC84" alt="Platform: Android"></a>
-  <a href="#windows-in-development"><img src="https://img.shields.io/badge/platform-Windows-0078D4" alt="Platform: Windows"></a>
-  <a href="#download"><img src="https://img.shields.io/badge/platform-iOS-555555" alt="Platform: iOS"></a>
+  <a href="https://play.google.com/store/apps/details?id=com.plaintxtoffice.plaintodo"><img src="https://img.shields.io/badge/platform-Android-3DDC84" alt="Platform: Android"></a>
+  <a href="https://apps.apple.com/app/id6837185055"><img src="https://img.shields.io/badge/platform-iOS-555555" alt="Platform: iOS"></a>
 </p>
 <!-- rumdl-enable MD033 MD041 -->
 
@@ -42,9 +41,10 @@ complete tasks or move them into a separate archive.
 
 Your list stays in a file you control. Every app can keep it on the device or
 connect directly to Dropbox. Android also opens a file you choose with the
-system file picker, Windows works with a local file, and iPhone supports Files
-and iCloud Drive. Each platform provides its own controls for working with the
-same readable task format. There is no account to create and no advertising.
+system file picker, the Windows version (in development) works with a local
+file, and iPhone supports Files and iCloud Drive. Each platform provides its
+own controls for working with the same readable task format. There is no
+account to create and no advertising.
 
 ## Features
 
@@ -53,8 +53,8 @@ same readable task format. There is no account to create and no advertising.
 - **Everyday editing:** Add, edit, complete, reopen, and delete tasks, with a
   confirmation before deletion.
 - **Flexible organization:** Sort tasks by priority or due date, and group
-  them by priority, due date, project, or context. Windows also sorts by
-  project or context.
+  them by priority, due date, project, or context. The Windows version (in
+  development) also sorts by project or context.
 - **Archives and exports:** Move completed tasks to `done.txt` and export a
   plain-text copy of your task list.
 - **Direct Dropbox access:** Connect each device to the same file, with
