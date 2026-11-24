@@ -1,4 +1,4 @@
-<!-- last_updated: 2026-11-22 -->
+<!-- last_updated: 2026-11-24 -->
 
 <!-- Authoring guidance: dev-docs/specs/README_SPEC.instructions.md -->
 <!-- rumdl-disable MD033 MD041 -->
@@ -110,11 +110,12 @@ troubleshooting.
 ## Feedback
 
 Send bug reports and feature requests to
-[support@plaintxtoffice.com](mailto:support@plaintxtoffice.com) or through the
+[feedback@plaintxtoffice.com](mailto:feedback@plaintxtoffice.com) or through the
 [contact page](https://plaintxtoffice.com/contact/). In the Android app, open
-**Settings** and tap **Send feedback**. In the iPhone app, open **Settings**
-and tap **Send Feedback**, then choose **Report a bug**, **Request a
-feature**, or **Open contact form**.
+**Settings** and tap **Send feedback**. In the iPhone app, open **Settings** and
+tap **Send Feedback**, then choose **Report a bug**, **Request a feature**, or
+**Open contact form**. Android 1.0.2 and 1.0.3 and iOS 1.3.0 address the email
+to `support@plaintxtoffice.com`.
 
 ## Source and License
 

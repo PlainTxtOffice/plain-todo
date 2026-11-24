@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-11-22
+last_updated: 2026-11-24
 version: 6.0.0
 product_versions:
   windows: "1.0.0"
@@ -814,8 +814,8 @@ title. Renaming a task outside the app can leave an old note without its task.
 | Android asks for two different Dropbox file paths starting with `/` | Enter separate task and archive paths, each beginning with `/`. |
 | Android cannot contact Dropbox | Check the internet connection and try again. A direct connection does not work offline. |
 | Android cannot read or save the Dropbox connection | Unlock the device and try again. |
-| Android says no email app is available for feedback | Tap **Open contact form** in **Settings**, or write to `support@plaintxtoffice.com` from any email account. |
-| Android says no browser is available for the contact form | Tap **Send feedback** to use email, or write to `support@plaintxtoffice.com` from any email account. |
+| Android says no email app is available for feedback | Tap **Open contact form** in **Settings**, or write to `feedback@plaintxtoffice.com` from any email account. |
+| Android says no browser is available for the contact form | Tap **Send feedback** to use email, or write to `feedback@plaintxtoffice.com` from any email account. |
 | A Dropbox file changed since loading | Reload, review the current list, and repeat only the edits still needed. |
 | A Dropbox write has an uncertain result | Reload before retrying; check whether the intended change is already present. |
 | Archiving reports a partial or uncertain result | Review both task and archive files before restarting and retrying to avoid duplicate archive entries. |
@@ -897,7 +897,7 @@ settings are retained.
 ## Feedback
 
 Send bug reports and feature requests to
-[support@plaintxtoffice.com](mailto:support@plaintxtoffice.com) or through the
+[feedback@plaintxtoffice.com](mailto:feedback@plaintxtoffice.com) or through the
 [contact page](https://plaintxtoffice.com/contact/). The Android and iPhone
 apps, and the Windows app (in development), also have a feedback screen that
 drafts the email for you.
@@ -913,8 +913,9 @@ drafts the email for you.
 
 1. On Android, open **Settings** and scroll to **Feedback**.
 1. Tap **Send feedback**. Your email app opens a draft addressed to
-   `support@plaintxtoffice.com` that already contains the app version, the
-   Android version, and the device model.
+   `feedback@plaintxtoffice.com` that already contains the app version, the
+   Android version, and the device model. Versions 1.0.2 and 1.0.3 address it to
+   `support@plaintxtoffice.com`.
 1. Describe what happened or what you would like, review the draft, and send
    it. Nothing is sent until you send the email.
 1. To use the website instead, tap **Open contact form**. Your browser opens
@@ -931,30 +932,30 @@ in a browser yourself.
 
 1. Choose **Help > Send Feedback...**.
 1. Click **Report a Bug** or **Request a Feature**. Your email app opens a
-   draft addressed to `support@plaintxtoffice.com` that already contains the
+   draft addressed to `feedback@plaintxtoffice.com` that already contains the
    app version and the Windows version. Your tasks are not included.
 1. Describe what happened or what you would like, review the draft, and send
    it. Nothing is sent until you send the email.
 1. To use the website instead, click **Open Contact Form**.
 
 If no email app is set up, the dialog says so; use **Open Contact Form** or
-write to `support@plaintxtoffice.com` from any email account.
+write to `feedback@plaintxtoffice.com` from any email account.
 <!-- Verified from: platform/windows/plain_todo/ui/gui/feedback.py -->
 
 ### Send feedback on iPhone
 
 1. Open **Settings** and tap **Send Feedback** in the **Feedback** section.
 1. Tap **Report a bug** or **Request a feature**. Your email app opens a draft
-   addressed to `support@plaintxtoffice.com` that already contains the app
-   version, the iOS version, and the device model. Your tasks are not
-   included.
+   addressed to `feedback@plaintxtoffice.com` that already contains the app
+   version, the iOS version, and the device model. Version 1.3.0 addresses it to
+   `support@plaintxtoffice.com`. Your tasks are not included.
 1. Describe what happened or what you would like, review the draft, and send
    it. Nothing is sent until you send the email.
 1. To use the website instead, tap **Open contact form**.
 1. Tap **Done** to close the screen.
 
 If no email app is set up, the screen says so; use **Open contact form** or
-write to `support@plaintxtoffice.com` from any email account.
+write to `feedback@plaintxtoffice.com` from any email account.
 <!-- Verified from: platform/ios/plain_todo/Feedback.swift; platform/ios/plain_todo/Views/Sheets.swift [SettingsSheet] -->
 
 ## Glossary

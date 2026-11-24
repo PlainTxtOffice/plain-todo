@@ -57,9 +57,10 @@ without deleting Dropbox files. You can also revoke the app's access in
 Dropbox. Dropbox handles your files under its own policies.
 
 If you choose Feedback, the app opens your email app with a draft addressed to
-<support@plaintxtoffice.com> that includes the app version, Android version and
-device model. You can also open our contact page instead. Nothing is sent
-unless you send it. Task contents are never included.
+<feedback@plaintxtoffice.com> (<support@plaintxtoffice.com> in versions 1.0.2
+and 1.0.3) that includes the app version, Android version and device model. You
+can also open our contact page instead. Nothing is sent unless you send it. Task
+contents are never included.
 
 Android backup is turned on for this app. Files in app storage and your
 settings can be included in Android backup and device-to-device transfer, if
