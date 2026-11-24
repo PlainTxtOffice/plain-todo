@@ -1,6 +1,6 @@
 ---
-last_updated: 2026-11-11
-version: 1.4.0
+last_updated: 2026-11-24
+version: 1.4.1
 ---
 
 # Connect Plain Todo to Dropbox
@@ -15,9 +15,9 @@ synced local folder.
 | --- | --- |
 | Android | Released on Google Play. |
 | Windows | In development; no public download yet. |
-| iPhone | In development; no public download yet. |
+| iPhone | Released on the App Store as Plain Todo Text. |
 
-The Windows and iPhone sections describe those apps as they are being built.
+The Windows section describes that app as it is being built.
 
 ## Before connecting
 
